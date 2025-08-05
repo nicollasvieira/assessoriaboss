@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Barbershop Marketing Agency Design System */
+
+@layer base {
+  :root {
+    /* Dark Theme Colors */
+    --background: 240 9% 5%; /* #0C0C0C */
+    --background-secondary: 240 9% 10%; /* #1A1A1A */
+    --foreground: 0 0% 98%;
+
+    /* Luxury Colors */
+    --gold: 51 100% 50%; /* #FFD700 */
+    --amber: 39 100% 50%; /* #FFA500 */
+    --bronze: 32 60% 52%; /* #C28840 */
+    --neon-green: 127 100% 50%; /* #00FF47 */
+    --button-gold: 48 100% 50%; /* #FFC400 */
+    
+    /* Text Colors */
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 75%;
+    --text-muted: 0 0% 60%;
+
+    /* Glass Effect */
+    --glass-bg: 0 0% 15% / 0.1;
+    --glass-border: 0 0% 100% / 0.1;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--amber)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+    --gradient-radial-gold: radial-gradient(ellipse at center, hsl(var(--gold) / 0.1) 0%, transparent 70%);
+    --gradient-bronze: linear-gradient(135deg, hsl(var(--bronze)), hsl(var(--gold)));
+
+    /* Shadows & Glows */
+    --glow-gold: 0 0 30px hsl(var(--gold) / 0.4), 0 0 60px hsl(var(--gold) / 0.2);
+    --glow-neon: 0 0 30px hsl(var(--neon-green) / 0.5), 0 0 60px hsl(var(--neon-green) / 0.3);
+    --glow-button-gold: 0 0 25px hsl(var(--button-gold) / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.6);
+    --shadow-3d: 0 10px 30px hsl(0 0% 0% / 0.3), 0 4px 8px hsl(0 0% 0% / 0.2);
+
+    /* Legacy Support */
+    --card: 240 9% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 9% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 51 100% 50%;
+    --primary-foreground: 240 9% 5%;
+    --secondary: 240 9% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 9% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 240 9% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.05;
+    --ring: 51 100% 50%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .bg-radial-gradient {
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.12) 0%, transparent 60%);
+  }
+  
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+  
+  .glow-neon {
+    box-shadow: var(--glow-neon);
+  }
+  
+  .glow-button-gold {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  }
+  
+  .glow-card {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.1);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float:nth-child(2n) {
+    animation-delay: 2s;
+  }
+  
+  .animate-float:nth-child(3n) {
+    animation-delay: 4s;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 100%;
+    animation: gradientX 4s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+}
+
+/* Particle Field */
+.particle-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  animation: particleFloat 8s ease-in-out infinite;
+}
+
+.particle:nth-child(2n) {
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 215, 0, 0.4);
+}
+
+.particle:nth-child(3n) {
+  width: 1px;
+  height: 1px;
+  background: rgba(255, 215, 0, 0.7);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientX {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
