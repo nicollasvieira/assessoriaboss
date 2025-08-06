@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-display font-black text-text-primary">
-              alpha <span className="text-gradient-gold bg-clip-text bg-gradient-gold">assessoria</span>
+              assessoria <span className="text-gradient-gold bg-clip-text bg-gradient-gold">boss</span>
             </div>
           </div>
 
